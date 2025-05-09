@@ -84,7 +84,7 @@ export class HUDSystem {
         healthPanel.horizontalAlignment = GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
         healthPanel.verticalAlignment = GUI.Control.VERTICAL_ALIGNMENT_BOTTOM;
         healthPanel.left = 20;
-        healthPanel.bottom = 80; // Position above shield indicator
+        healthPanel.bottom = 90; // Position above shield indicator
         this.hudTexture.addControl(healthPanel);
         
         // Health label
@@ -155,7 +155,7 @@ export class HUDSystem {
         
         // Shield label
         const shieldLabel = new GUI.TextBlock();
-        shieldLabel.text = "SHIELDS";
+        shieldLabel.text = "SHIELDS-FIXED";  // Clearly mark this as changed
         shieldLabel.color = "white";
         shieldLabel.fontSize = 14;
         shieldLabel.height = "20px";
@@ -778,6 +778,9 @@ export class HUDSystem {
         
         // Update shield display
         this._updateShieldDisplay();
+        
+        // Update health display
+        this._updateHealthDisplay();
         
         // Update energy display
         this._updateEnergyDisplay();

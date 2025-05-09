@@ -251,9 +251,9 @@ export class CollisionSystem {
                 // Buildings should collide with all entities
                 // But ships of the same side shouldn't collide with each other
                 
-                // Check if either entity is a building
-                const entityAIsBuilding = entityA.type === 'building' || entityA.affiliation === 'structure';
-                const entityBIsBuilding = entityB.type === 'building' || entityB.affiliation === 'structure';
+                // Check if either entity is a building or structure
+                const entityAIsBuilding = entityA.type === 'building' || entityA.affiliation === 'structure' || entityA.name?.includes('building');
+                const entityBIsBuilding = entityB.type === 'building' || entityB.affiliation === 'structure' || entityB.name?.includes('building');
                 
                 // If either entity is a building, allow collision
                 if (entityAIsBuilding || entityBIsBuilding) {
@@ -463,9 +463,9 @@ export class CollisionSystem {
             // Buildings should collide with all entities
             // But ships of the same side shouldn't collide with each other
             
-            // Check if either entity is a building
-            const entityIsBuilding = entity.type === 'building' || entity.affiliation === 'structure';
-            const otherEntityIsBuilding = otherEntity.type === 'building' || otherEntity.affiliation === 'structure';
+            // Check if either entity is a building or structure
+            const entityIsBuilding = entity.type === 'building' || entity.affiliation === 'structure' || entity.name?.includes('building');
+            const otherEntityIsBuilding = otherEntity.type === 'building' || otherEntity.affiliation === 'structure' || otherEntity.name?.includes('building');
             
             // If either entity is a building, allow collision
             if (entityIsBuilding || otherEntityIsBuilding) {

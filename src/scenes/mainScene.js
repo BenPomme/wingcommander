@@ -159,19 +159,20 @@ export async function setupScene(gameState, engine, canvas) {
     const playerShip = await createSimpleSpacecraft(scene);
     playerShip.position = new BABYLON.Vector3(0, 30, 100); // Start higher up and further back
     playerShip.rotation = new BABYLON.Vector3(0.1, 0, 0); // Slight nose-down pitch
+    playerShip.health = 100; // Initialize player health to 100
     gameState.player = playerShip;
     
     // Create physics system for the player ship
     const playerPhysics = createSpacecraftPhysics({
         maxSpeed: 100, // Changed to 100 KPS as requested
-        acceleration: 0.04, // Reduced for progressive acceleration
+        acceleration: 0.2, // Increased acceleration for better response
         accelerationCurve: {
             startSpeed: 0,
             midSpeed: 50,
             endSpeed: 100,
-            startAccel: 0.15, // Fast initial acceleration
-            midAccel: 0.08,   // Medium acceleration in the middle range
-            endAccel: 0.03    // Slow acceleration at high speeds
+            startAccel: 0.4, // Faster initial acceleration
+            midAccel: 0.2,   // Medium acceleration in the middle range
+            endAccel: 0.1    // Slow acceleration at high speeds
         },
         deceleration: 0.01,
         rotationSpeed: 0.008, // 2x slower rotation
@@ -695,7 +696,9 @@ export async function setupScene(gameState, engine, canvas) {
                             
                             // Apply hull damage if any
                             if (hitResult.hullDamage > 0) {
+                                playerShip.health = playerShip.health || 100;
                                 playerShip.health -= hitResult.hullDamage;
+                                console.log(`Player health: ${playerShip.health}`);
                                 
                                 // Track damage in mission system
                                 if (gameState.missionSystem) {
