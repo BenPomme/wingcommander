@@ -51,19 +51,19 @@ After thorough research, we've selected the following technologies:
 - [x] Implement collision detection and damage system
 
 ### Phase 3: Game Systems (4 weeks)
-- [ ] Build mission structure framework
-- [ ] Implement branching mission paths based on performance
-- [ ] Create carrier landing/takeoff sequences
-- [ ] Design and implement HUD and cockpit view
-- [ ] Add shield and energy management systems
-- [ ] Implement communication system with wingmen
+- [x] Build mission structure framework
+- [x] Implement branching mission paths based on performance
+- [x] Create carrier landing/takeoff sequences
+- [x] Design and implement HUD and cockpit view
+- [x] Add shield and energy management systems
+- [x] Implement communication system with wingmen
 
 ### Phase 4: Content Creation (3 weeks)
-- [ ] Model and texture all spacecraft (Confederation and Kilrathi)
-- [ ] Create space environments and backgrounds
-- [ ] Design mission scenarios mirroring the original game
-- [ ] Create simplified versions of narrative cutscenes
-- [ ] Implement character portraits and dialogue system
+- [x] Model and texture all spacecraft (Confederation and Kilrathi)
+- [x] Create space environments and backgrounds
+- [x] Design mission scenarios mirroring the original game
+- [x] Create simplified versions of narrative cutscenes
+- [x] Implement character portraits and dialogue system
 
 ### Phase 5: UI and Progression (2 weeks)
 - [ ] Create main menu and game options
@@ -116,10 +116,10 @@ We'll implement a hybrid physics system that maintains the fun arcade-style feel
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/wing-commander-browser.git
+git clone https://github.com/BenPomme/wingcommander.git
 
 # Navigate to the project directory
-cd wing-commander-browser
+cd wingcommander
 
 # Install dependencies
 npm install

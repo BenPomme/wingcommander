@@ -40,8 +40,8 @@ If you have an idea for an enhancement, please create an issue on GitHub with th
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/wing-commander-browser.git
-   cd wing-commander-browser
+   git clone https://github.com/BenPomme/wingcommander.git
+   cd wingcommander
    ```
 
 2. Install dependencies:
