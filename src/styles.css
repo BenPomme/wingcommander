@@ -1,0 +1,147 @@
+/* Game-specific styles */
+.hud {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 5px #00ff00;
+    pointer-events: none;
+}
+
+.hud-section {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+}
+
+.hud-shield, .hud-hull, .hud-energy {
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+.hud-bar {
+    height: 10px;
+    background-color: #333;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.hud-bar-inner {
+    height: 100%;
+    background-color: #00ff00;
+    transition: width 0.3s ease;
+}
+
+.hud-hull .hud-bar-inner {
+    background-color: #ff3300;
+}
+
+.hud-shield .hud-bar-inner {
+    background-color: #00aaff;
+}
+
+.hud-weapons {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-weapon {
+    margin-bottom: 5px;
+}
+
+.hud-weapon.active {
+    color: #ff9900;
+    text-shadow: 0 0 5px #ff9900;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.menu-title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px #0080ff;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-option {
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-transform: uppercase;
+}
+
+.menu-option:hover, .menu-option.selected {
+    color: #fff;
+    text-shadow: 0 0 10px #0080ff;
+}
+
+.cutscene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 75;
+}
+
+.cutscene-character {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    height: 70%;
+}
+
+.cutscene-dialogue {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin-bottom: 50px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.cutscene-name {
+    color: #0080ff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wing Commander Browser</title>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #000;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        .loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            z-index: 100;
+        }
+
+        .loading-screen h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .loading-bar {
+            width: 50%;
+            height: 30px;
+            background-color: #333;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            transition: width 0.3s ease;
+        }
+        
+        .controls-info {
+            margin-top: 2rem;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            border: 1px solid #555;
+        }
+        
+        .controls-info h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        
+        .controls-info ul {
+            padding-left: 1rem;
+            list-style-type: none;
+        }
+        
+        .controls-info li {
+            margin-bottom: 0.5rem;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    
+    <div class="loading-screen" id="loadingScreen">
+        <h1>Wing Commander Browser</h1>
+        <div class="loading-bar">
+            <div class="loading-progress" id="loadingProgress"></div>
+        </div>
+        <p id="loadingText">Loading game assets...</p>
+        <div class="controls-info">
+            <h2>Controls:</h2>
+            <ul>
+                <li>W/S: Forward/Backward</li>
+                <li>A/D: Turn Left/Right</li>
+                <li>Q/E: Roll Left/Right</li>
+                <li>Arrow Keys: Strafe</li>
+                <li>Space: Fire Weapons</li>
+                <li>T: Cycle Next Target</li>
+                <li>Y: Cycle Previous Target</li>
+                <li>R: Clear Target</li>
+                <li>C/Tab: Cycle Weapon</li>
+                <li>Shift: Afterburner</li>
+                <li>F1-F3: Power to Weapons/Engines/Shields</li>
+                <li>F4: Balanced Power</li>
+                <li>Z/X: Shield Forward/Rear</li>
+                <li>V: Balance Shields</li>
+                <li>M: View Mission Objectives</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
